@@ -1,2 +1,3 @@
-# 325-Graph-Theory
-# Code from project 
+# 325-Graph-Theory Projects
+ 
+Repository contains Python source code that runs various algorithms related to graph theory
