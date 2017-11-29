@@ -20,16 +20,15 @@ def power(set):
     power_set.insert(0, list(' '))
     return power_set
 
-power_temp = ['A', 'B']
-power(power_temp)
-
-
+# Input a bipartite graph and find its partitie sets
 # def partite_sets(graph):
 #     print("partite")
 
+# Input a bipartite graph and return true if a perfect matching 
 # def is_perfect(graph):
 #     print("is perfect")
 
+# Input a graph and return true if bipartite
 # def is_bipartite(graph):
 #     print("is bipartite")
 
