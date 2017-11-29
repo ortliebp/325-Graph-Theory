@@ -21,8 +21,17 @@ def power(set):
     return power_set
 
 # Input a bipartite graph and find its partitie sets
-# def partite_sets(graph):
-#     print("partite")
+def partite_sets(graph):
+    partite_sets = []
+    # Iterate through values of graph
+    for key, value in graph.items():
+            # Add the set if not already in the partite set
+            if value not in partite_sets:
+                partite_sets.append(value)
+    return partite_sets
+
+# temp_graph = {'A' :['B', 'C'], 'B' :['A', 'D'], 'C' :['A', 'D'], 'D' :['B', 'C']}
+# partite_sets(temp_graph)
 
 # Input a bipartite graph and return true if a perfect matching 
 # def is_perfect(graph):
