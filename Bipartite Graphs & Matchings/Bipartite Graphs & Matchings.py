@@ -1,6 +1,6 @@
 # Author: Pierce Ortlieb
 # Title: Bipartitie Graphs & Matchings
-# Date: 11/29/17
+# About: Python script will find matchings of a graph and determine if bipartite
 
 # Find the power set of a given set
 def power(set):
@@ -30,12 +30,21 @@ def partite_sets(graph):
                 partite_sets.append(value)
     return partite_sets
 
-# temp_graph = {'A' :['B', 'C'], 'B' :['A', 'D'], 'C' :['A', 'D'], 'D' :['B', 'C']}
-# partite_sets(temp_graph)
-
 # Input a bipartite graph and return true if a perfect matching 
-# def is_perfect(graph):
-#     print("is perfect")
+def is_perfect(graph):
+    set_builder = []
+    for key in graph.keys():
+        for value in graph.items():
+            if key in value[1]:
+                set_builder.append(key)
+                if set_builder == graph.keys():
+                    return True
+                    print(set_builder)
+                    print(graph.keys)
+
+temp_perf_graph = {'A' :['B', 'C'], 'B' :['A', 'D'], 'C' :['A', 'D'], 'D' :['B', 'C']}
+# temp_notperf_graph = {'A' : ['B', 'C'], 'B' : ['A'], 'C' : ['A']}
+is_perfect(temp_perf_graph)
 
 # Input a graph and return true if bipartite
 # def is_bipartite(graph):
