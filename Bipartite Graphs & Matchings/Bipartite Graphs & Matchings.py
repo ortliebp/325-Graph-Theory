@@ -33,14 +33,16 @@ def partite_sets(graph):
 # Input a bipartite graph and return true if a perfect matching 
 def is_perfect(graph):
     set_builder = []
-    for key in graph.keys():
-        for value in graph.items():
-            if key in value[1]:
-                set_builder.append(key)
-                if set_builder == graph.keys():
-                    return True
-                    print(set_builder)
-                    print(graph.keys)
+    partite_set = partite_sets(graph)
+    
+    # for key in graph.keys():
+    #     for value in graph.items():
+    #         if key in value[1]:
+    #             set_builder.append(key)
+    #             if set_builder == graph.keys():
+    #                 return True
+    #                 print(set_builder)
+    #                 print(graph.keys)
 
 temp_perf_graph = {'A' :['B', 'C'], 'B' :['A', 'D'], 'C' :['A', 'D'], 'D' :['B', 'C']}
 # temp_notperf_graph = {'A' : ['B', 'C'], 'B' : ['A'], 'C' : ['A']}
