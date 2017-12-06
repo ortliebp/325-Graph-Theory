@@ -34,7 +34,15 @@ def partite_sets(graph):
 def is_perfect(graph):
     set_builder = []
     partite_set = partite_sets(graph)
-    
+    # print('Partite: ' + str(partite_set))
+    for x in partite_set:
+        power_set = power(x)
+        for z in power_set:
+            if str(z) in graph.keys():
+                if len(graph.get(z).values()) >= len(z):
+                    Print('True')
+        # print('Power:' + str(power_set))
+
     # for key in graph.keys():
     #     for value in graph.items():
     #         if key in value[1]:
