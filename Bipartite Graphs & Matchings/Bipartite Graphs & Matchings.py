@@ -21,13 +21,13 @@ def power(set):
 
 # Input a bipartite graph and find its partitie sets
 def partite_sets(graph):
-    partite_sets = []
+    partite_set = []
     # Iterate through values of graph
     for key, value in graph.items():
             # Add the set if not already in the partite set
-            if value not in partite_sets:
-                partite_sets.append(value)
-    return partite_sets
+            if value not in partite_set:
+                partite_set.append(value)
+    return partite_set
 
 # Input a bipartite graph and return true if a perfect matching 
 def is_perfect(graph):
@@ -36,9 +36,9 @@ def is_perfect(graph):
     for x in partite_set:
         # Find all subsets of selected partite set
         power_set = power(x)
+        # Find vertices adjacent to the vertex
         for vertex in power_set:
             neighbors = []
-            # Find vertices adjacent to the vertex
             for v in vertex:
                 neighbors.append(graph.get(v))
             # Check if the neighborhood of a vertex is smaller than the subset of the partite set
