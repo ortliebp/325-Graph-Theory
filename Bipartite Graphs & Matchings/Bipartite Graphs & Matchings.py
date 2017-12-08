@@ -31,8 +31,10 @@ def partite_sets(graph):
 
 # Input a bipartite graph and return true if a perfect matching 
 def is_perfect(graph):
+    # Get parite sets of the given graph
     partite_set = partite_sets(graph)
     for x in partite_set:
+        # Find all subsets of selected partite set
         power_set = power(x)
         for vertex in power_set:
             neighbors = []
@@ -41,12 +43,9 @@ def is_perfect(graph):
                 neighbors.append(graph.get(v))
             # Check if the neighborhood of a vertex is smaller than the subset of the partite set
             if len(neighbors) < len(vertex):
-                return False            
+                return False  
+    # If there was not a neighborhood smaller than the size of the subset, for all subsets of the partite sets we return True                  
     return True
-
-temp_perf_graph = {'A' :['B', 'C'], 'B' :['A', 'D'], 'C' :['A', 'D'], 'D' :['B', 'C']}
-temp_notperf_graph = {'A' : ['B', 'C'], 'B' : ['A'], 'C' : ['A']}
-is_perfect(temp_notperf_graph)
 
 # Input a graph and return true if bipartite
 def is_bipartite(graph):
@@ -57,7 +56,3 @@ def is_bipartite(graph):
         return True
     else:
         return False
-        
-# temp_bipartite = {'A' :['B', 'C'],'B' :['A'],'C' :['A', 'D', 'E'],'D' :['C'],'E' :['C']}
-# temp_not_bipartite = {'A' :['B', 'C'],'B' :['A', 'D'],'C' :['A', 'E'],'D' :['B', 'E'],'E' :['D', 'C']}
-# is_bipartite(temp_bipartite)
