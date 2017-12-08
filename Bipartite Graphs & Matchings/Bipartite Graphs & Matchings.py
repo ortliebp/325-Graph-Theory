@@ -17,7 +17,6 @@ def power(set):
     # Sort our power set by length
     power_set.sort(key=len)
     # Empty set is always part of a power set
-    power_set.insert(0, list(' '))
     return power_set
 
 # Input a bipartite graph and find its partitie sets
@@ -32,25 +31,24 @@ def partite_sets(graph):
 
 # Input a bipartite graph and return true if a perfect matching 
 def is_perfect(graph):
+    temp = [list(graph.keys())]
     set_builder = []
     partite_set = partite_sets(graph)
     # print('Partite: ' + str(partite_set))
     for x in partite_set:
         power_set = power(x)
-        for z in power_set:
-            if str(z) in graph.keys():
-                if len(graph.get(z).values()) >= len(z):
-                    Print('True')
-        # print('Power:' + str(power_set))
+        for vertex in power_set:
+            print(graph[str(vertex)])
+            # if str(vertex) in temp:
+            #     print(vertex)
+            # temp.append(vertex)
+            # print(temp)
 
-    # for key in graph.keys():
-    #     for value in graph.items():
-    #         if key in value[1]:
-    #             set_builder.append(key)
-    #             if set_builder == graph.keys():
-    #                 return True
-    #                 print(set_builder)
-    #                 print(graph.keys)
+        # for z in power_set:
+        #     print(list(z))
+            # if str(z) in graph:
+            #     if len(list(graph[z])) >= len(z):
+            #         print('True' + z)
 
 temp_perf_graph = {'A' :['B', 'C'], 'B' :['A', 'D'], 'C' :['A', 'D'], 'D' :['B', 'C']}
 # temp_notperf_graph = {'A' : ['B', 'C'], 'B' : ['A'], 'C' : ['A']}
