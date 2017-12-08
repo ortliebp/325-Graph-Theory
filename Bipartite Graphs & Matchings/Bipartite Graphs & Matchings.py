@@ -31,27 +31,15 @@ def partite_sets(graph):
 
 # Input a bipartite graph and return true if a perfect matching 
 def is_perfect(graph):
-    temp = graph.keys()
-    print(temp)
-    set_builder = []
     partite_set = partite_sets(graph)
-    # print('Partite: ' + str(partite_set))
     for x in partite_set:
         power_set = power(x)
         for vertex in power_set:
-            if str(vertex) in temp:
-                print('YES')
-            # print(graph.get(str(vertex)))
-            # if str(vertex) in temp:
-            #     print(vertex)
-            # temp.append(vertex)
-            # print(temp)
-
-        # for z in power_set:
-        #     print(list(z))
-            # if str(z) in graph:
-            #     if len(list(graph[z])) >= len(z):
-            #         print('True' + z)
+            if len(vertex) == 1:
+                temp2 = str(vertex)
+                temp = graph.get(temp2)
+                print(temp)
+                
 
 temp_perf_graph = {'A' :['B', 'C'], 'B' :['A', 'D'], 'C' :['A', 'D'], 'D' :['B', 'C']}
 # temp_notperf_graph = {'A' : ['B', 'C'], 'B' : ['A'], 'C' : ['A']}
